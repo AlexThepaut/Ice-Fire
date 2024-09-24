@@ -22,9 +22,6 @@ func _unhandled_input(event: InputEvent) -> void:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
-	elif event is InputEventJoypadMotion:
-		if event.axis == 2:
-			head.rotate_y(-event.axis_value * SENSITIVITY)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -32,12 +29,12 @@ func _physics_process(delta: float) -> void:
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("Jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("left", "right", "up", "down")
+	var input_dir := Input.get_vector("Strife_Left", "Strife_Right", "Forward", "Backward")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if is_on_floor():
