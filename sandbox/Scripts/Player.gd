@@ -1,21 +1,27 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
+const SPEED = 3.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.005
 
 const BOB_FREQ = 2.0
-const BOB_AMP = 0.08
+const BOB_AMP = 0.04
 
 var t_bob = 0.0
 var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var flamme = $Head/Camera3D/Control/AnimatedSprite2D
+@onready var fire = $Head/Camera3D/Control/Fire
+@onready var ice = $Head/Camera3D/Control/Ice
+@onready var spell_anim = $Head/Camera3D/Control/AnimationPlayer
+
+var toggleSpell = true
 
 func _ready() -> void:
-	flamme.play()
+	ice.play()
+	fire.play()
+	_switchSpell()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -32,6 +38,10 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y -= gravity * delta
+
+	# Handle switch spell
+	if Input.is_action_just_pressed("Switch"):
+		_switchSpell()
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
@@ -63,3 +73,13 @@ func _headbob(time) -> Vector3:
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func _switchSpell() -> void:
+	if toggleSpell:
+		spell_anim.play_backwards("Switch")
+		fire.play()
+	else:
+		spell_anim.play("Switch")
+		ice.play()
+		
+	toggleSpell = !toggleSpell
