@@ -1,0 +1,65 @@
+[gd_scene load_steps=7 format=3 uid="uid://dq5cfq5n1yek6"]
+
+[ext_resource type="PackedScene" uid="uid://cjibfg35nublr" path="res://Assets/Glove.glb" id="1_i6fo4"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mmysy"]
+albedo_color = Color(1, 0.741667, 0.5, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_er68h"]
+points = PackedVector3Array(0.0015425, 0.00411345, 0.000190819, -0.00287619, -0.00319988, -0.000114122, -0.00287619, -0.00319988, 3.83488e-05, 0.0015425, -0.00411345, 3.83488e-05, -0.000284999, 0.00457071, 0.00201905, 0.000171428, 0.00411345, -0.00072372, 0.00321905, -0.000912615, -0.00087619, -0.00226643, 0.00426619, 3.83488e-05, 0.000933333, -0.00121809, 0.00140917, 0.00139036, 0.00426619, 0.00156164, -0.00226643, 0, 0.00110451, -0.00257131, -0.00319988, -0.000418779, -0.00165607, -0.00457071, 0.000343006, -0.00211369, 0.00426619, 0.00140917, -0.00013226, -0.00472345, -0.000418779, 0.00321905, -0.00106631, -0.000266309, -0.000742022, 0.000303569, 0.00171411, 0.00123762, 0.00457071, -0.000114122, 0.00123762, -0.00441797, 0.000343006, -0.00180881, 0.00472345, 0.000190819, -0.00287619, -0.00228536, 0.00049576, 0.000933333, 0.00487524, 0.00140917, -0.00150452, -0.00228536, 0.00110451, 0.000780594, 0.000912615, 0.00171411, 0.00306631, 0, -0.00072372, -0.00165607, -0.00441797, -0.000418779, 0.00245714, -0.000608092, -0.00087619, -0.00135178, 0.00487524, 0.00140917, -0.00013226, -0.00304714, 0.000952038, 0.00139036, -0.00426619, -0.000266309, 0.00215226, 0.00106631, 0.000799567, 0.0015425, -0.00289345, 0.000647097)
+
+[sub_resource type="Animation" id="Animation_mhefe"]
+resource_name = "Fire"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/Glove:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.3),
+"transitions": PackedFloat32Array(1, 1.68179, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.25), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_0fjum"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RootNode/Glove:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ogu13"]
+_data = {
+"Fire": SubResource("Animation_mhefe"),
+"RESET": SubResource("Animation_0fjum")
+}
+
+[node name="Hand" instance=ExtResource("1_i6fo4")]
+
+[node name="Glove" parent="RootNode" index="0"]
+cast_shadow = 0
+surface_material_override/0 = SubResource("StandardMaterial3D_mmysy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RootNode" index="1"]
+transform = Transform3D(100, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_er68h")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RootNode" index="2"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_ogu13")
+}
+
+[node name="RayCast3D" type="RayCast3D" parent="RootNode" index="3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0.6)

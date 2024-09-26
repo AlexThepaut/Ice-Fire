@@ -12,12 +12,16 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var hand_animation = $Head/Camera3D/Hand/RootNode/AnimationPlayer
+@onready var hand_ray = $Head/Camera3D/Hand/RootNode/RayCast3D
+
+var fire_ball = load("res://Scenes/Fire.tscn")
+var instance
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
-	print(event)
 	if event is InputEventMouseMotion:
 		head.rotate_y(-event.relative.x * SENSITIVITY)
 		camera.rotate_x(-event.relative.y * SENSITIVITY)
@@ -50,6 +54,14 @@ func _physics_process(delta: float) -> void:
 
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
+
+	if Input.is_action_just_pressed("Fire"):
+			if !hand_animation.is_playing():
+				hand_animation.play("Fire")
+				instance = fire_ball.instantiate()
+				instance.position = hand_ray.global_position
+				instance.transform.basis = hand_ray.global_transform.basis
+				get_parent().add_child(instance)
 
 	move_and_slide()
 

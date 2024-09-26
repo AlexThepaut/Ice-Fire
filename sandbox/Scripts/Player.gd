@@ -12,8 +12,10 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
+@onready var flamme = $Head/Camera3D/Control/AnimatedSprite2D
 
 func _ready() -> void:
+	flamme.play()
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
