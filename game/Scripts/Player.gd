@@ -12,8 +12,8 @@ var gravity = 9.8
 
 @onready var head = $Head
 @onready var camera = $Head/Camera3D
-@onready var hand_animation = $Head/Camera3D/Hand/RootNode/AnimationPlayer
-@onready var hand_ray = $Head/Camera3D/Hand/RootNode/RayCast3D
+#@onready var hand_animation = $Head/Camera3D/Hand/RootNode/AnimationPlayer
+@onready var hand_ray = $Head/Camera3D/RayCast3D
 
 var fire_ball = load("res://Scenes/Fire.tscn")
 var instance
@@ -56,12 +56,12 @@ func _physics_process(delta: float) -> void:
 	camera.transform.origin = _headbob(t_bob)
 
 	if Input.is_action_just_pressed("Fire"):
-			if !hand_animation.is_playing():
-				hand_animation.play("Fire")
-				instance = fire_ball.instantiate()
-				instance.position = hand_ray.global_position
-				instance.transform.basis = hand_ray.global_transform.basis
-				get_parent().add_child(instance)
+			#if !hand_animation.is_playing():
+				#hand_animation.play("Fire")
+		instance = fire_ball.instantiate()
+		instance.position = hand_ray.global_position
+		instance.transform.basis = hand_ray.global_transform.basis
+		get_parent().add_child(instance)
 
 	move_and_slide()
 

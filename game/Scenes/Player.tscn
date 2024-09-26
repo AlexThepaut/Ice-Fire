@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://ceewuu8rlv8t6"]
 
 [ext_resource type="Script" path="res://Scripts/Player.gd" id="1_3mmd0"]
-[ext_resource type="PackedScene" uid="uid://dq5cfq5n1yek6" path="res://Scenes/Hand.tscn" id="2_i304y"]
+[ext_resource type="PackedScene" uid="uid://ddsrinvtabssb" path="res://Scenes/GUI.tscn" id="2_7i68v"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_4toqy"]
 
@@ -25,5 +25,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
-[node name="Hand" parent="Head/Camera3D" instance=ExtResource("2_i304y")]
-transform = Transform3D(-0.125231, 0.272611, -1.09481e-08, 0.272611, 0.125231, 2.38325e-08, 2.62268e-08, 2.50598e-15, -0.3, 0.279146, -0.115571, -0.3)
+[node name="GUI" parent="Head/Camera3D" instance=ExtResource("2_7i68v")]
+
+[node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
+transform = Transform3D(-0.990488, 0, 0.1376, 0.1376, -4.37114e-08, 0.990488, 6.01469e-09, 1, 4.32956e-08, 0.232942, -0.143171, -0.262832)

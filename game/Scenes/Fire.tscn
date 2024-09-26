@@ -1,60 +1,152 @@
-[gd_scene load_steps=7 format=3 uid="uid://byuqxsqa717dm"]
+[gd_scene load_steps=30 format=3 uid="uid://byuqxsqa717dm"]
 
 [ext_resource type="Script" path="res://Scripts/Fire.gd" id="1_s73lr"]
+[ext_resource type="Texture2D" uid="uid://1su8uwjmejql" path="res://Assets/Spritesheets/Fire/Fire_00.png" id="2_unjv8"]
+[ext_resource type="Texture2D" uid="uid://m1e2p5fyrgob" path="res://Assets/Spritesheets/Fire/Fire_01.png" id="3_p62ru"]
+[ext_resource type="Texture2D" uid="uid://bc17nac0y5fv0" path="res://Assets/Spritesheets/Fire/Fire_02.png" id="4_ky8nu"]
+[ext_resource type="Texture2D" uid="uid://bvnn0p1yluk3m" path="res://Assets/Spritesheets/Fire/Fire_03.png" id="5_ufijc"]
+[ext_resource type="Texture2D" uid="uid://dtvxhlwm5yjy3" path="res://Assets/Spritesheets/Fire/Fire_04.png" id="6_n0qx1"]
+[ext_resource type="Texture2D" uid="uid://n7bxo34o0bab" path="res://Assets/Spritesheets/Fire/Fire_05.png" id="7_8ib5m"]
+[ext_resource type="Texture2D" uid="uid://o1ks6lpxw17i" path="res://Assets/Spritesheets/Fire/Fire_06.png" id="8_oxigg"]
+[ext_resource type="Texture2D" uid="uid://kvexwvbp1qym" path="res://Assets/Spritesheets/Fire/Fire_07.png" id="9_elqcn"]
+[ext_resource type="Texture2D" uid="uid://b1jpn3s61l8tr" path="res://Assets/Spritesheets/Fire/Fire_08.png" id="10_h1d85"]
+[ext_resource type="Texture2D" uid="uid://rxlxkks3n38m" path="res://Assets/Spritesheets/Fire/Fire_09.png" id="11_lphkh"]
+[ext_resource type="Texture2D" uid="uid://bdnynbdpfr5w5" path="res://Assets/Spritesheets/Spark/spark_0.png" id="12_2gdj0"]
+[ext_resource type="Texture2D" uid="uid://d0kyuq8qvwmns" path="res://Assets/Spritesheets/Fire/Fire_10.png" id="12_pkq64"]
+[ext_resource type="Texture2D" uid="uid://dcjsko35ytctq" path="res://Assets/Spritesheets/Spark/spark_1.png" id="13_4e2ek"]
+[ext_resource type="Texture2D" uid="uid://b1mkgxa7qtvbt" path="res://Assets/Spritesheets/Fire/Fire_11.png" id="13_og1xu"]
+[ext_resource type="Texture2D" uid="uid://bpfapuh1i6v56" path="res://Assets/Spritesheets/Spark/spark_2.png" id="14_58wu0"]
+[ext_resource type="Texture2D" uid="uid://dmahrati47p3v" path="res://Assets/Spritesheets/Fire/Fire_12.png" id="14_gx8ic"]
+[ext_resource type="Texture2D" uid="uid://d2gauqle04u5y" path="res://Assets/Spritesheets/Spark/spark_3.png" id="15_0h447"]
+[ext_resource type="Texture2D" uid="uid://btt2hcuidpath" path="res://Assets/Spritesheets/Fire/Fire_13.png" id="15_nf2kl"]
+[ext_resource type="Texture2D" uid="uid://dltct86s77crj" path="res://Assets/Spritesheets/Fire/Fire_14.png" id="16_1n8dc"]
+[ext_resource type="Texture2D" uid="uid://b83mpeom22qml" path="res://Assets/Spritesheets/Spark/spark_4.png" id="16_yedqf"]
+[ext_resource type="Texture2D" uid="uid://clenlryij432l" path="res://Assets/Spritesheets/Spark/spark_5.png" id="17_kj2sa"]
+[ext_resource type="Texture2D" uid="uid://dvn4dvsj1g843" path="res://Assets/Spritesheets/Fire/Fire_15.png" id="17_nlf6w"]
+[ext_resource type="Texture2D" uid="uid://emksrtsqhnmf" path="res://Assets/Spritesheets/Spark/spark_6.png" id="18_tjuc0"]
+[ext_resource type="Texture2D" uid="uid://chg5iq8arfm53" path="res://Assets/Spritesheets/Fire/Fire_16.png" id="18_v8or4"]
+[ext_resource type="Texture2D" uid="uid://b6f3wr26s0od3" path="res://Assets/Spritesheets/Fire/Fire_17.png" id="19_0vjih"]
+[ext_resource type="Texture2D" uid="uid://c11im0bo3memv" path="res://Assets/Spritesheets/Fire/Fire_18.png" id="20_bmytr"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_6yq62"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_83qcf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_unjv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_p62ru")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ky8nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ufijc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_n0qx1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_8ib5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_oxigg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_elqcn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h1d85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_lphkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_pkq64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_og1xu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_gx8ic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_nf2kl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_1n8dc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_nlf6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_v8or4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0vjih")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bmytr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ylnyq"]
-albedo_color = Color(1, 0.116667, 0, 1)
-emission_enabled = true
-emission = Color(0.96, 0.192, 0, 1)
-emission_energy_multiplier = 4.5
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2s7oe"]
-initial_velocity_min = 3.0
-initial_velocity_max = 5.0
-angular_velocity_min = 2.99998
-angular_velocity_max = 4.99998
-gravity = Vector3(0, -5, 0)
-collision_mode = 2
-collision_use_scale = true
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptys6"]
-albedo_color = Color(1, 0.583333, 0, 1)
-emission_enabled = true
-emission = Color(1, 0.296, 0.12, 1)
-emission_energy_multiplier = 5.17
-
-[sub_resource type="BoxMesh" id="BoxMesh_peh5q"]
-material = SubResource("StandardMaterial3D_ptys6")
-size = Vector3(0.04, 0.04, 0.04)
+[sub_resource type="SpriteFrames" id="SpriteFrames_y4g8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_2gdj0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_4e2ek")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_58wu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_0h447")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_yedqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_kj2sa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_tjuc0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}]
 
 [node name="Fire" type="Node3D"]
 script = ExtResource("1_s73lr")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
-mesh = SubResource("SphereMesh_6yq62")
-surface_material_override/0 = SubResource("StandardMaterial3D_ylnyq")
-
 [node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0, -0.1, 0)
+transform = Transform3D(1, -1.74846e-07, 0, 1.74846e-07, 1, 0, 0, 0, 1, 0, -0.182491, -0.4)
 collide_with_areas = true
 debug_shape_thickness = 5
 
-[node name="GPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(6.5071e-08, 1, 1.50794e-15, 1, -6.5071e-08, -8.74228e-08, -8.74228e-08, -6.19279e-16, -1, -0.0101499, 0.3, 0)
-emitting = false
-amount = 37
-one_shot = true
-explosiveness = 1.0
-randomness = 0.4
-process_material = SubResource("ParticleProcessMaterial_2s7oe")
-draw_pass_1 = SubResource("BoxMesh_peh5q")
-
 [node name="Timer" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 4.0
 one_shot = true
 autostart = true
+
+[node name="Flamme" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 0, 1, 4.37114e-08, 1, 0, 1.91069e-15, 0, 0.3, 0)
+cast_shadow = 0
+billboard = 1
+double_sided = false
+sprite_frames = SubResource("SpriteFrames_83qcf")
+frame_progress = 0.752847
+
+[node name="Sparkle" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_y4g8a")
+frame_progress = 0.595888
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
