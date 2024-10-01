@@ -28,4 +28,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 [node name="GUI" parent="Head/Camera3D" instance=ExtResource("2_7i68v")]
 
 [node name="RayCast3D" type="RayCast3D" parent="Head/Camera3D"]
-transform = Transform3D(-0.990488, 0, 0.1376, 0.1376, -4.37114e-08, 0.990488, 6.01469e-09, 1, 4.32956e-08, 0.232942, -0.143171, -0.262832)
+transform = Transform3D(-0.990011, 0.031027, 0.137534, 0.1376, -4.34334e-08, 0.990488, 0.0307318, 0.999519, -0.00426927, 0.197191, 0.0595312, -0.382583)

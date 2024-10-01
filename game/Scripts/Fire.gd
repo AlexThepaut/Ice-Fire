@@ -19,8 +19,11 @@ func _process(delta: float) -> void:
 		speed = 0
 		sprite.visible = false
 		particules.play()
-		
 		particules.visible = true
+		ray.enabled = false
+		if ray.get_collider().is_in_group("Monsters"):
+			ray.get_collider()._hit(3.0)
+		
 		await get_tree().create_timer(0.4).timeout
 		queue_free()
 

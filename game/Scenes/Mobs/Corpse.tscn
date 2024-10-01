@@ -1,0 +1,141 @@
+[gd_scene load_steps=33 format=3 uid="uid://j21b812u6kw8"]
+
+[ext_resource type="Script" path="res://Scripts/Corpse.gd" id="1_bcjam"]
+[ext_resource type="Texture2D" uid="uid://cdfrf5s40ip5h" path="res://Assets/Spritesheets/Splash/sprite_00.png" id="2_35ps8"]
+[ext_resource type="Texture2D" uid="uid://b7deqjbl1vgfd" path="res://Assets/Spritesheets/Splash/sprite_01.png" id="3_4cf22"]
+[ext_resource type="Texture2D" uid="uid://cjyddswjaeokc" path="res://Assets/Spritesheets/Splash/sprite_02.png" id="4_dnepv"]
+[ext_resource type="Texture2D" uid="uid://btvafm5a81pci" path="res://Assets/Spritesheets/Splash/sprite_03.png" id="5_7occk"]
+[ext_resource type="Texture2D" uid="uid://ba3mcwap21lol" path="res://Assets/Spritesheets/Splash/sprite_04.png" id="6_3xyt3"]
+[ext_resource type="Texture2D" uid="uid://cuo34ak3w8n6n" path="res://Assets/Spritesheets/Splash/sprite_05.png" id="7_qn0j1"]
+[ext_resource type="Texture2D" uid="uid://cicy1hsuvv51g" path="res://Assets/Spritesheets/Splash/sprite_06.png" id="8_bxa46"]
+[ext_resource type="Texture2D" uid="uid://b02fp2rwgl5dq" path="res://Assets/Spritesheets/Splash/sprite_07.png" id="9_cqrfx"]
+[ext_resource type="Texture2D" uid="uid://25jc1yod35ql" path="res://Assets/Spritesheets/Splash/sprite_08.png" id="10_y8rw2"]
+[ext_resource type="Texture2D" uid="uid://co1d1815ew2w5" path="res://Assets/Spritesheets/Splash/sprite_09.png" id="11_re0e8"]
+[ext_resource type="Texture2D" uid="uid://ctvrurc7ixwk8" path="res://Assets/Spritesheets/Splash/sprite_10.png" id="12_ju8x5"]
+[ext_resource type="Texture2D" uid="uid://b2ei0gy32exgd" path="res://Assets/Spritesheets/Splash/sprite_11.png" id="13_qh030"]
+[ext_resource type="Texture2D" uid="uid://cssxmh28hikhn" path="res://Assets/Spritesheets/Splash/sprite_12.png" id="14_lewgy"]
+[ext_resource type="Texture2D" uid="uid://wt76dps4vqan" path="res://Assets/Spritesheets/Splash/sprite_13.png" id="15_243qd"]
+[ext_resource type="Texture2D" uid="uid://dx8xigmtb24hq" path="res://Assets/Spritesheets/Splash/sprite_14.png" id="16_0edo8"]
+[ext_resource type="Texture2D" uid="uid://dk1hp673ih8go" path="res://Assets/Spritesheets/Splash/sprite_15.png" id="17_wytga"]
+[ext_resource type="Texture2D" uid="uid://dplxwlf2y6sif" path="res://Assets/Spritesheets/Splash/sprite_16.png" id="18_i5tw6"]
+[ext_resource type="Texture2D" uid="uid://cwipv5g0p4wy8" path="res://Assets/Spritesheets/Splash/sprite_17.png" id="19_4roah"]
+[ext_resource type="Texture2D" uid="uid://c8d0a6gmbi47q" path="res://Assets/Spritesheets/Splash/sprite_18.png" id="20_d3ks1"]
+[ext_resource type="Texture2D" uid="uid://bcgh0gf2sqgjj" path="res://Assets/Spritesheets/Splash/sprite_19.png" id="21_3glqs"]
+[ext_resource type="Texture2D" uid="uid://je053igsv2u" path="res://Assets/Spritesheets/Splash/sprite_20.png" id="22_7mbtu"]
+[ext_resource type="Texture2D" uid="uid://c03bakxi70wtw" path="res://Assets/Spritesheets/Splash/sprite_21.png" id="23_25d72"]
+[ext_resource type="Texture2D" uid="uid://eoddj20ko2y8" path="res://Assets/Spritesheets/Splash/sprite_22.png" id="24_jux8f"]
+[ext_resource type="Texture2D" uid="uid://fi4qt80vfj1m" path="res://Assets/Spritesheets/Splash/sprite_23.png" id="25_1nih2"]
+[ext_resource type="Texture2D" uid="uid://texi0bmif7cp" path="res://Assets/Spritesheets/Splash/sprite_24.png" id="26_j5m6i"]
+[ext_resource type="Texture2D" uid="uid://doe2738sejdy1" path="res://Assets/Spritesheets/Splash/sprite_25.png" id="27_3b3wh"]
+[ext_resource type="Texture2D" uid="uid://bjkh577un56i4" path="res://Assets/Spritesheets/Splash/sprite_26.png" id="28_ujuas"]
+[ext_resource type="Texture2D" uid="uid://c14y7ien0yv28" path="res://Assets/Spritesheets/Splash/sprite_27.png" id="29_4i8k1"]
+[ext_resource type="Texture2D" uid="uid://dgujc66auiy7p" path="res://Assets/Spritesheets/Splash/sprite_28.png" id="30_ycgs7"]
+[ext_resource type="Texture2D" uid="uid://cy2er4xn4sxne" path="res://Assets/Spritesheets/Splash/sprite_29.png" id="31_l1c1q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_88flk"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_35ps8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4cf22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dnepv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7occk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3xyt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qn0j1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_bxa46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_cqrfx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_y8rw2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_re0e8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ju8x5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qh030")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lewgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_243qd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_0edo8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_wytga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i5tw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_4roah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_d3ks1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_3glqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_7mbtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_25d72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_jux8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_1nih2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_j5m6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_3b3wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ujuas")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_4i8k1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_ycgs7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_l1c1q")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
+
+[node name="Corpse" type="Node3D"]
+script = ExtResource("1_bcjam")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52803, 0)
+pixel_size = 0.02
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_88flk")
+frame_progress = 0.715017

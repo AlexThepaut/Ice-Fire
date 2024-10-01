@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://cn2thg06k7jr"]
+[gd_scene load_steps=12 format=3 uid="uid://cn2thg06k7jr"]
 
+[ext_resource type="PackedScene" uid="uid://bl481gb7lwpdv" path="res://Scenes/Mobs/Monster.tscn" id="1_0hdjo"]
 [ext_resource type="PackedScene" uid="uid://ceewuu8rlv8t6" path="res://Scenes/Player.tscn" id="1_17p26"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pp058"]
@@ -14,6 +15,17 @@ background_mode = 2
 sky = SubResource("Sky_ddwsj")
 tonemap_mode = 2
 glow_enabled = true
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_f3ih4"]
+vertices = PackedVector3Array(3.7495, 0.365325, 2.5029, 4.2495, 0.365325, 3.5029, 5.4995, 0.365325, 2.5029, 5.4995, 0.365325, 1.0029, 11.4995, 0.365325, -3.9971, 12.7495, 0.365325, -4.4971, 12.7495, 0.365325, -63.2471, 5.9995, 0.365325, 0.502899, -2.2505, 0.365325, 2.5029, 9.2495, 0.365325, 0.502899, 11.4995, 0.365325, -2.4971, -63.0005, 0.365325, 4.2529, -2.7505, 0.365325, 3.0029, -2.7505, 0.365325, 4.5029, -63.0005, 0.365325, -63.2471, 13.7495, 0.365325, -4.4971, 14.2495, 0.365325, -2.9971, 63.2495, 0.365325, -2.9971, 63.2495, 0.365325, -63.2471, 6.4995, 0.365325, 5.2529, 4.2495, 0.365325, 9.2529, 11.9995, 0.365325, -1.7471, 9.9995, 0.365325, 1.0029, 9.7495, 0.365325, 4.7529, 9.2495, 0.365325, 5.2529, 4.2495, 0.365325, 63.0029, 63.2495, 0.365325, 63.0029, 13.7495, 0.365325, -1.7471, 7.4995, 3.11532, 3.0029, 7.4995, 3.11532, 3.7529, 8.2495, 3.11532, 3.7529, 8.2495, 3.11532, 3.0029, 0.499496, 1.36532, 7.7529, 2.7495, 1.36532, 7.7529, 2.7495, 1.36532, 4.0029, -1.2505, 1.36532, 4.0029, 3.7495, 0.365325, 9.7529, 0.249496, 0.365325, 9.7529, -3.0005, 0.365325, 63.0029, -0.00050354, 1.36532, 8.2529, -1.2505, 0.615325, 9.5029, -1.2505, 1.36532, 8.1279, -2.5005, 0.365325, 9.7529, -2.7505, 0.365325, 9.2529, -63.0005, 0.365325, 8.2529, -2.7505, 0.365325, 8.0029, -63.0005, 0.365325, 63.0029)
+polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Array(6, 5, 4), PackedInt32Array(3, 0, 7), PackedInt32Array(7, 0, 8), PackedInt32Array(10, 9, 4), PackedInt32Array(4, 9, 7), PackedInt32Array(8, 12, 11), PackedInt32Array(12, 13, 11), PackedInt32Array(7, 8, 4), PackedInt32Array(4, 8, 6), PackedInt32Array(6, 8, 11), PackedInt32Array(6, 11, 14), PackedInt32Array(16, 15, 17), PackedInt32Array(17, 15, 18), PackedInt32Array(18, 15, 6), PackedInt32Array(15, 5, 6), PackedInt32Array(2, 19, 1), PackedInt32Array(1, 19, 20), PackedInt32Array(22, 9, 21), PackedInt32Array(21, 9, 10), PackedInt32Array(24, 23, 17), PackedInt32Array(20, 24, 25), PackedInt32Array(25, 24, 26), PackedInt32Array(26, 24, 17), PackedInt32Array(22, 21, 27), PackedInt32Array(20, 19, 24), PackedInt32Array(22, 27, 23), PackedInt32Array(23, 27, 17), PackedInt32Array(17, 27, 16), PackedInt32Array(31, 30, 28), PackedInt32Array(28, 30, 29), PackedInt32Array(33, 32, 34), PackedInt32Array(34, 32, 35), PackedInt32Array(36, 25, 37), PackedInt32Array(37, 25, 38), PackedInt32Array(35, 32, 39), PackedInt32Array(37, 40, 39), PackedInt32Array(39, 40, 41), PackedInt32Array(39, 41, 35), PackedInt32Array(38, 43, 42), PackedInt32Array(40, 37, 42), PackedInt32Array(42, 37, 38), PackedInt32Array(36, 20, 25), PackedInt32Array(45, 44, 13), PackedInt32Array(13, 44, 11), PackedInt32Array(43, 38, 45), PackedInt32Array(45, 38, 44), PackedInt32Array(44, 38, 46)]
+agent_radius = 0.75
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l7f7t"]
+albedo_color = Color(0.57, 0.57, 0.57, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_npd6s"]
+albedo_color = Color(0.52, 0.52, 0.52, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rnd57"]
 transparency = 1
@@ -36,67 +48,94 @@ environment = SubResource("Environment_i44pn")
 
 [node name="Terrain" type="Node3D" parent="."]
 
-[node name="Walls" type="Node3D" parent="Terrain"]
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="Terrain"]
+navigation_mesh = SubResource("NavigationMesh_f3ih4")
 
-[node name="Wall1" type="CSGBox3D" parent="Terrain/Walls"]
+[node name="Walls" type="Node3D" parent="Terrain/NavigationRegion3D"]
+
+[node name="Wall1" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Walls"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 63.7767)
 use_collision = true
 size = Vector3(128, 6, 0.001)
 
-[node name="Wall2" type="CSGBox3D" parent="Terrain/Walls"]
+[node name="Wall2" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -64, 2.5, -0.246563)
 use_collision = true
 size = Vector3(128, 6, 0.001)
 
-[node name="Wall3" type="CSGBox3D" parent="Terrain/Walls"]
+[node name="Wall3" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Walls"]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 2.5, -64.2466)
 use_collision = true
 size = Vector3(128, 6, 0.001)
 
-[node name="Wall4" type="CSGBox3D" parent="Terrain/Walls"]
+[node name="Wall4" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Walls"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 64, 2.5, -0.246563)
 use_collision = true
 size = Vector3(128, 6, 0.001)
 
-[node name="Floor" type="CSGBox3D" parent="Terrain"]
+[node name="Floor" type="CSGBox3D" parent="Terrain/NavigationRegion3D"]
+material_override = SubResource("StandardMaterial3D_l7f7t")
 use_collision = true
 size = Vector3(128, 0.001, 128)
 
-[node name="Forms" type="Node3D" parent="Terrain"]
+[node name="Forms" type="Node3D" parent="Terrain/NavigationRegion3D"]
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Terrain/Forms"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Forms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7734, 0.467287, -3)
 use_collision = true
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Terrain/Forms"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Forms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.723384, 0.43006, 6)
+material_override = SubResource("StandardMaterial3D_npd6s")
 use_collision = true
 size = Vector3(5.1, 1, 5)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Terrain/Forms"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Forms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.77338, 0.267287, 2)
 material_override = SubResource("StandardMaterial3D_rnd57")
 use_collision = true
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Terrain/Forms"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Forms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.88669, 1.28364, 3.5)
 material_override = SubResource("StandardMaterial3D_c7uvs")
 use_collision = true
 size = Vector3(2, 3, 2)
 
-[node name="CSGBox3D6" type="CSGBox3D" parent="Terrain/Forms"]
+[node name="CSGBox3D6" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Forms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.1468, 3.73458, 4)
 material_override = SubResource("StandardMaterial3D_bgvet")
 use_collision = true
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Terrain/Forms"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Forms"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.57338, 1.36729, 2)
 material_override = SubResource("StandardMaterial3D_bgvet")
 use_collision = true
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Forms"]
+transform = Transform3D(1, 0, 0, 0, 0.766044, -0.642788, 0, 0.642788, 0.766044, -0.58477, -1.85227, 9.43509)
+use_collision = true
+size = Vector3(2.48369, 3.06885, 5)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="Terrain/NavigationRegion3D/Forms"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866026, 0, 0.866026, 0.5, 2.57166, -1.47883, 9.31318)
+use_collision = true
+size = Vector3(1.4, 1, 5)
 
 [node name="Entities" type="Node3D" parent="."]
 
 [node name="NPCs" type="Node3D" parent="Entities"]
 
+[node name="Monster" parent="Entities/NPCs" instance=ExtResource("1_0hdjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.7, 0.6, -6.1)
+player_path = NodePath("../../Player")
+
+[node name="Monster2" parent="Entities/NPCs" instance=ExtResource("1_0hdjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.9, 1.2, -8.3)
+player_path = NodePath("../../Player")
+
+[node name="Monster3" parent="Entities/NPCs" instance=ExtResource("1_0hdjo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5, 1.2, -8.3)
+player_path = NodePath("../../Player")
+
 [node name="Player" parent="Entities" instance=ExtResource("1_17p26")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 14.7)

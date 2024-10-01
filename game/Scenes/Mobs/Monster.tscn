@@ -1,0 +1,133 @@
+[gd_scene load_steps=24 format=3 uid="uid://bl481gb7lwpdv"]
+
+[ext_resource type="Script" path="res://Scripts/Monster.gd" id="1_yyw85"]
+[ext_resource type="Texture2D" uid="uid://b6opttbcxn0tq" path="res://Assets/Spritesheets/Monster/Death/sprite_00.png" id="2_1hcyl"]
+[ext_resource type="Texture2D" uid="uid://c18byxb0kq4n8" path="res://Assets/Spritesheets/Monster/Run/sprite_3.png" id="2_6ono4"]
+[ext_resource type="Texture2D" uid="uid://b4dwedagtd527" path="res://Assets/Spritesheets/Monster/Idle/sprite_06.png" id="2_yddaj"]
+[ext_resource type="Texture2D" uid="uid://fhed8mb2qlx1" path="res://Assets/Spritesheets/Monster/Death/sprite_01.png" id="3_1iy8r"]
+[ext_resource type="Texture2D" uid="uid://8kx17l3bljp5" path="res://Assets/Spritesheets/Monster/Run/sprite_4.png" id="3_tngxb"]
+[ext_resource type="Texture2D" uid="uid://btihwahtgfmgo" path="res://Assets/Spritesheets/Monster/Idle/sprite_07.png" id="3_uuoy0"]
+[ext_resource type="Texture2D" uid="uid://diiqb320bkjdh" path="res://Assets/Spritesheets/Monster/Death/sprite_02.png" id="4_ixbtl"]
+[ext_resource type="Texture2D" uid="uid://dct1671oh1aim" path="res://Assets/Spritesheets/Monster/Run/sprite_5.png" id="4_qw1h2"]
+[ext_resource type="Texture2D" uid="uid://cr7whoiarchsy" path="res://Assets/Spritesheets/Monster/Idle/sprite_08.png" id="4_r5ij2"]
+[ext_resource type="Texture2D" uid="uid://c2xrlf3bqmjf2" path="res://Assets/Spritesheets/Monster/Death/sprite_03.png" id="5_02fyn"]
+[ext_resource type="Texture2D" uid="uid://eupnr0tlo7ji" path="res://Assets/Spritesheets/Monster/Idle/sprite_09.png" id="5_4uiax"]
+[ext_resource type="Texture2D" uid="uid://cuc4a3hba1tge" path="res://Assets/Spritesheets/Monster/Death/sprite_04.png" id="6_f673f"]
+[ext_resource type="Texture2D" uid="uid://jr5k6j5oipkw" path="res://Assets/Spritesheets/Monster/Death/sprite_05.png" id="7_pmhvt"]
+[ext_resource type="Texture2D" uid="uid://ci0nlw7ujbjgp" path="res://Assets/Spritesheets/Monster/Death/sprite_06.png" id="8_qd01c"]
+[ext_resource type="Texture2D" uid="uid://b4ttvchcjg3hc" path="res://Assets/Spritesheets/Monster/Run/sprite_0.png" id="9_2l7ae"]
+[ext_resource type="Texture2D" uid="uid://dwpoh48dnw8fo" path="res://Assets/Spritesheets/Monster/Death/sprite_07.png" id="9_fdxav"]
+[ext_resource type="Texture2D" uid="uid://crfaw8x0o4t4x" path="res://Assets/Spritesheets/Monster/Run/sprite_1.png" id="10_slu60"]
+[ext_resource type="Texture2D" uid="uid://cs3jav4obgkgu" path="res://Assets/Spritesheets/Monster/Death/sprite_08.png" id="10_sx1vq"]
+[ext_resource type="Texture2D" uid="uid://dprcw38k4f6b0" path="res://Assets/Spritesheets/Monster/Run/sprite_2.png" id="11_01ycn"]
+[ext_resource type="Texture2D" uid="uid://ql2td1olv7gl" path="res://Assets/Spritesheets/Monster/Death/sprite_09.png" id="11_ce456"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_neij4"]
+radius = 0.3
+height = 1.2
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fwqhd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1hcyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1iy8r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ixbtl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_02fyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_f673f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_pmhvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qd01c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fdxav")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_sx1vq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ce456")
+}],
+"loop": true,
+"name": &"Death",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6ono4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_tngxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qw1h2")
+}],
+"loop": true,
+"name": &"Fly",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_yddaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uuoy0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_r5ij2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_4uiax")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_2l7ae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_slu60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_01ycn")
+}],
+"loop": true,
+"name": &"Start_Fly",
+"speed": 8.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Monster" type="CharacterBody3D" groups=["Monsters"]]
+collision_layer = 3
+collision_mask = 3
+safe_margin = 1.0
+script = ExtResource("1_yyw85")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0675863, 0, 0)
+shape = SubResource("CapsuleShape3D_neij4")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+pixel_size = 0.02
+sprite_frames = SubResource("SpriteFrames_fwqhd")
+animation = &"Death"
+frame_progress = 0.733751
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

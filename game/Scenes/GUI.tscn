@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ddsrinvtabssb"]
+[gd_scene load_steps=23 format=3 uid="uid://ddsrinvtabssb"]
 
 [ext_resource type="Texture2D" uid="uid://1su8uwjmejql" path="res://Assets/Spritesheets/Fire/Fire_00.png" id="1_f4j0t"]
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="1_y3e4q"]
@@ -20,6 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://chg5iq8arfm53" path="res://Assets/Spritesheets/Fire/Fire_16.png" id="17_dyloj"]
 [ext_resource type="Texture2D" uid="uid://b6f3wr26s0od3" path="res://Assets/Spritesheets/Fire/Fire_17.png" id="18_tfxxj"]
 [ext_resource type="Texture2D" uid="uid://c11im0bo3memv" path="res://Assets/Spritesheets/Fire/Fire_18.png" id="19_xl3y3"]
+[ext_resource type="Texture2D" uid="uid://b380rack1k8nd" path="res://Assets/Sprite/crosshair057.png" id="21_tlae4"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_chijr"]
 animations = [{
@@ -101,3 +102,6 @@ script = ExtResource("1_y3e4q")
 position = Vector2(959, 460)
 scale = Vector2(3.91667, 3.91667)
 sprite_frames = SubResource("SpriteFrames_chijr")
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+texture = ExtResource("21_tlae4")
