@@ -1,0 +1,59 @@
+[gd_scene load_steps=8 format=3 uid="uid://dr70km7akbetn"]
+
+[ext_resource type="Script" path="res://Scripts/monster_spell.gd" id="1_rsuqt"]
+[ext_resource type="Texture2D" uid="uid://8ar7g58wtgc2" path="res://Assets/Spritesheets/All_Fire_Bullet_Pixel_16x16_03.png" id="2_74lwp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o38qj"]
+atlas = ExtResource("2_74lwp")
+region = Rect2(256, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_klipq"]
+atlas = ExtResource("2_74lwp")
+region = Rect2(272, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4shx3"]
+atlas = ExtResource("2_74lwp")
+region = Rect2(288, 96, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0onbs"]
+atlas = ExtResource("2_74lwp")
+region = Rect2(304, 96, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_88cb0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o38qj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_klipq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4shx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0onbs")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Monster_Spell" type="Node3D"]
+script = ExtResource("1_rsuqt")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, -8.7423e-08, 0, 1.74846e-07, 0.5, 0, 0, 0, 1, 0, 0.217509, 0)
+collide_with_areas = true
+debug_shape_thickness = 5
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 4.0
+one_shot = true
+autostart = true
+
+[node name="Spell" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, -4.37114e-08, -1.91068e-15, -1.91069e-15, -8.74228e-08, 1, -4.37114e-08, -1, -8.74228e-08, -0.000854522, 0.190498, -0.000566319)
+cast_shadow = 0
+double_sided = false
+sprite_frames = SubResource("SpriteFrames_88cb0")

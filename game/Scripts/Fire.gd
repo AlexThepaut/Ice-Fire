@@ -1,6 +1,7 @@
 extends Node3D
 
 var speed = 20.0
+var damage = 4.0
 
 @onready var sprite = $Flamme
 @onready var ray = $RayCast3D
@@ -22,7 +23,7 @@ func _process(delta: float) -> void:
 		particules.visible = true
 		ray.enabled = false
 		if ray.get_collider().is_in_group("Monsters"):
-			ray.get_collider()._hit(3.0)
+			ray.get_collider()._hit(damage)
 		
 		await get_tree().create_timer(0.4).timeout
 		queue_free()

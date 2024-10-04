@@ -4,8 +4,8 @@ const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.005
 
-const BOB_FREQ = 2.0
-const BOB_AMP = 0.08
+const BOB_FREQ = 3.5
+const BOB_AMP = 0.06
 
 var t_bob = 0.0
 var gravity = 9.8
@@ -14,8 +14,10 @@ var gravity = 9.8
 @onready var camera = $Head/Camera3D
 #@onready var hand_animation = $Head/Camera3D/Hand/RootNode/AnimationPlayer
 @onready var hand_ray = $Head/Camera3D/RayCast3D
+@onready var center_ray = $Head/Camera3D/RayCast3D2
+@onready var gui = $Head/Camera3D/GUI
 
-var fire_ball = load("res://Scenes/Fire.tscn")
+var fire_ball = load("res://Scenes/Spell/Fire.tscn")
 var instance
 
 func _ready() -> void:
@@ -46,11 +48,11 @@ func _physics_process(delta: float) -> void:
 			velocity.x = direction.x * SPEED
 			velocity.z = direction.z * SPEED
 		else:
-			velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 5.0)
-			velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 5.0)
+			velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 3.0)
+			velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 3.0)
 	else:
-		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 2.0)
-		velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 2.0)
+		velocity.x = lerp(velocity.x, direction.x * SPEED, delta * 1.5)
+		velocity.z = lerp(velocity.z, direction.z * SPEED, delta * 1.5)
 
 	t_bob += delta * velocity.length() * float(is_on_floor())
 	camera.transform.origin = _headbob(t_bob)
@@ -65,8 +67,19 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _process(delta: float) -> void:
+	if center_ray.is_colliding() and center_ray.get_collider().is_in_group("Monsters"):
+		gui.get_node("Monster_Bar").visible = true
+		gui.get_node("Monster_Bar").max_value = center_ray.get_collider().MAX_HEALTH
+		gui.get_node("Monster_Bar").value = center_ray.get_collider().HEALTH
+	else: 
+		gui.get_node("Monster_Bar").visible = false
+
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
 	pos.y = sin(time * BOB_FREQ) * BOB_AMP
 	pos.x = cos(time * BOB_FREQ / 2) * BOB_AMP
 	return pos
+
+func _hit(damage) -> void:
+	pass

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://j21b812u6kw8"]
+[gd_scene load_steps=34 format=3 uid="uid://j21b812u6kw8"]
 
 [ext_resource type="Script" path="res://Scripts/Corpse.gd" id="1_bcjam"]
 [ext_resource type="Texture2D" uid="uid://cdfrf5s40ip5h" path="res://Assets/Spritesheets/Splash/sprite_00.png" id="2_35ps8"]
@@ -130,7 +130,11 @@ animations = [{
 "speed": 24.0
 }]
 
-[node name="Corpse" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_8xkuq"]
+size = Vector3(0.0224609, 0.00262451, 0.0270996)
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.19071e-05, 0, 0)
 script = ExtResource("1_bcjam")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
@@ -138,4 +142,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.52803, 0)
 pixel_size = 0.02
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_88flk")
-frame_progress = 0.715017
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00456747, 0.0267029, 0)
+shape = SubResource("BoxShape3D_8xkuq")
