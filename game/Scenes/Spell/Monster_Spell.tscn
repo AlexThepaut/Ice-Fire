@@ -36,7 +36,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 8.0
 }]
 
 [node name="Monster_Spell" type="Node3D"]
@@ -55,5 +55,9 @@ autostart = true
 [node name="Spell" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, -4.37114e-08, -1.91068e-15, -1.91069e-15, -8.74228e-08, 1, -4.37114e-08, -1, -8.74228e-08, -0.000854522, 0.190498, -0.000566319)
 cast_shadow = 0
+billboard = 1
 double_sided = false
 sprite_frames = SubResource("SpriteFrames_88cb0")
+frame_progress = 0.0692903
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

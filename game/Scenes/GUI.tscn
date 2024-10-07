@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://ddsrinvtabssb"]
+[gd_scene load_steps=27 format=3 uid="uid://ddsrinvtabssb"]
 
 [ext_resource type="Texture2D" uid="uid://1su8uwjmejql" path="res://Assets/Spritesheets/Fire/Fire_00.png" id="1_f4j0t"]
 [ext_resource type="Script" path="res://Scripts/gui.gd" id="1_y3e4q"]
@@ -23,6 +23,7 @@
 [ext_resource type="Texture2D" uid="uid://b380rack1k8nd" path="res://Assets/Sprite/crosshair057.png" id="21_tlae4"]
 [ext_resource type="Texture2D" uid="uid://cdojt0qcxu1sq" path="res://Assets/HUD/Health/Individual_0004s_0013_left_backplate.png" id="22_w3vqf"]
 [ext_resource type="Texture2D" uid="uid://vg3kr61fosui" path="res://Assets/HUD/Health/Individual_0002s_0001_left_bar.png" id="23_5jgyy"]
+[ext_resource type="FontFile" uid="uid://c43fth4s2rffc" path="res://Assets/Fonts/civitype.ttf" id="24_82b4t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_chijr"]
 animations = [{
@@ -89,19 +90,23 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_oivi1"]
+font = ExtResource("24_82b4t")
+font_size = 80
+
 [node name="GUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -1152.0
-offset_bottom = -648.0
+offset_right = -1920.0
+offset_bottom = -1080.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_y3e4q")
 
 [node name="Hand_Fire" type="AnimatedSprite2D" parent="."]
-position = Vector2(964, 460)
+position = Vector2(1726, 886)
 scale = Vector2(3.91667, 3.91667)
 sprite_frames = SubResource("SpriteFrames_chijr")
 
@@ -110,10 +115,34 @@ texture = ExtResource("21_tlae4")
 
 [node name="Monster_Bar" type="TextureProgressBar" parent="."]
 layout_mode = 0
-offset_left = 395.0
-offset_top = 18.0
-offset_right = 746.0
-offset_bottom = 36.0
+offset_left = 49.0
+offset_top = 68.0
+offset_right = 403.0
+offset_bottom = 87.0
+nine_patch_stretch = true
+texture_under = ExtResource("22_w3vqf")
+texture_progress = ExtResource("23_5jgyy")
+
+[node name="Monster_Label" type="Label" parent="Monster_Bar"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.737
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -10.997
+offset_right = -2.0
+offset_bottom = -20.0
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_oivi1")
+horizontal_alignment = 1
+
+[node name="Health_Bar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 1033.0
+offset_right = 450.0
+offset_bottom = 1065.0
 nine_patch_stretch = true
 texture_under = ExtResource("22_w3vqf")
 texture_progress = ExtResource("23_5jgyy")

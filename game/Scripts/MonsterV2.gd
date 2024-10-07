@@ -3,7 +3,7 @@ extends CharacterBody3D
 @export var MAX_HEALTH = 10
 @export var HEALTH = MAX_HEALTH
 @export var player_path: NodePath
-const SPEED = 2.0
+const SPEED = 1.0
 const DETECTION_DISTANCE = 20.0
 const FIRE_DISTANCE = 10.0
 
@@ -66,13 +66,12 @@ func fly() -> void:
 	nav_agent.set_target_position(player.global_transform.origin)
 	player_distance = nav_agent.distance_to_target()
 	var next_nav_point = nav_agent.get_next_path_position()
-	
+
 	velocity = (next_nav_point - global_transform.origin).normalized() * SPEED
 	anim.play("Fly")
 	look_at(Vector3(player.global_position.x, global_position.y, player.global_position.z), Vector3.UP)
 
 func shoot() -> void:
-	print("shoot")
 	is_shooting = true
 	velocity = Vector3.ZERO
 	anim.play("Shoot")
@@ -90,12 +89,10 @@ func _on_sight_range_body_entered(body: Node3D) -> void:
 		actual_state = STATE.FLY
 
 func _on_sight_range_body_exited(body: Node3D) -> void:
-	print(is_shooting, actual_state)
 	if not is_shooting:
 		actual_state = STATE.IDLE
 
 func _on_timer_timeout() -> void:
-	print(player_distance, FIRE_DISTANCE)
 	if player_distance < FIRE_DISTANCE:
 		previous_state = actual_state
 		actual_state = STATE.SHOOT

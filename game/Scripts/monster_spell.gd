@@ -1,5 +1,5 @@
 extends Node3D
-var speed = 10.0
+var speed = 12.0
 var damage = 2.0
 
 @onready var sprite = $Spell
@@ -14,9 +14,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += transform.basis * Vector3(0, -speed, 0) * delta
 	if ray.is_colliding():
+		ray.enabled = false
 		speed = 0
 		sprite.visible = false
-		ray.enabled = false
 		if ray.get_collider().is_in_group("Player"):
 			ray.get_collider()._hit(damage)
 		

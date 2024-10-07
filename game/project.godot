@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Ice-Fire"
-run/main_scene="res://Scenes/World.tscn"
+run/main_scene="res://Scenes/Main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 
 [global_group]
 

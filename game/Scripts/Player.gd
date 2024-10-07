@@ -1,26 +1,29 @@
 extends CharacterBody3D
 
+@onready var head = $Head
+@onready var camera = $Head/Camera
+@onready var hand_ray = $Head/Camera/Fire_Ray
+@onready var center_ray = $Head/Camera/Visor_Ray
+@onready var gui = $Head/Camera/GUI
+@onready var timer = $Damage_Timer
+
+@export var MAX_HEALTH = 10
+@export var HEALTH = MAX_HEALTH
+
 const SPEED = 4.0
 const JUMP_VELOCITY = 4.5
 const SENSITIVITY = 0.005
-
 const BOB_FREQ = 3.5
 const BOB_AMP = 0.06
+const GRAVITY = 9.8
 
 var t_bob = 0.0
-var gravity = 9.8
-
-@onready var head = $Head
-@onready var camera = $Head/Camera3D
-#@onready var hand_animation = $Head/Camera3D/Hand/RootNode/AnimationPlayer
-@onready var hand_ray = $Head/Camera3D/RayCast3D
-@onready var center_ray = $Head/Camera3D/RayCast3D2
-@onready var gui = $Head/Camera3D/GUI
-
 var fire_ball = load("res://Scenes/Spell/Fire.tscn")
 var instance
+var hitable = true
 
 func _ready() -> void:
+	gui.get_node("Health_Bar").max_value = MAX_HEALTH
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _unhandled_input(event: InputEvent) -> void:
@@ -30,9 +33,9 @@ func _unhandled_input(event: InputEvent) -> void:
 		camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(80))
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	# Add the GRAVITY.
 	if not is_on_floor():
-		velocity.y -= gravity * delta
+		velocity.y -= GRAVITY * delta
 
 	# Handle jump.
 	if Input.is_action_just_pressed("Jump") and is_on_floor():
@@ -68,12 +71,17 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 func _process(delta: float) -> void:
+	gui.get_node("Health_Bar").value = HEALTH
+	
 	if center_ray.is_colliding() and center_ray.get_collider().is_in_group("Monsters"):
 		gui.get_node("Monster_Bar").visible = true
+		gui.get_node("Monster_Bar").get_node("Monster_Label").visible = true
 		gui.get_node("Monster_Bar").max_value = center_ray.get_collider().MAX_HEALTH
 		gui.get_node("Monster_Bar").value = center_ray.get_collider().HEALTH
+		gui.get_node("Monster_Bar").get_node("Monster_Label").text = center_ray.get_collider().name
 	else: 
 		gui.get_node("Monster_Bar").visible = false
+		gui.get_node("Monster_Bar").get_node("Monster_Label").visible = false
 
 func _headbob(time) -> Vector3:
 	var pos = Vector3.ZERO
@@ -82,4 +90,14 @@ func _headbob(time) -> Vector3:
 	return pos
 
 func _hit(damage) -> void:
-	pass
+	if hitable:
+		hitable = false
+		timer.start(0.1)
+		HEALTH -= damage
+		
+		if HEALTH <= 0:
+			get_tree().change_scene_to_file("res://Scenes/Main_menu.tscn")
+
+
+func _on_timer_timeout() -> void:
+	hitable = true
