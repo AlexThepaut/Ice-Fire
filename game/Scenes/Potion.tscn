@@ -1,0 +1,84 @@
+[gd_scene load_steps=9 format=3 uid="uid://wcotciaqd4e4"]
+
+[ext_resource type="Script" path="res://Scripts/Potion.gd" id="1_jw4gx"]
+[ext_resource type="Texture2D" uid="uid://c0v16chcvdubh" path="res://Assets/Sprite/PotionsPack1.png" id="2_mrad8"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l7it2"]
+radius = 0.18554
+height = 0.371081
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n0uak"]
+atlas = ExtResource("2_mrad8")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lo7mf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0uak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0uak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0uak")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n0uak")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_icowi"]
+resource_name = "bounce"
+length = 2.0
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.2, 0, 1, 1, 0, 0.4, 0, 2, 1, 0, 0.2, 0)
+
+[sub_resource type="Animation" id="Animation_mrssd"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite3D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0.196454, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bmic7"]
+_data = {
+"RESET": SubResource("Animation_mrssd"),
+"bounce": SubResource("Animation_icowi")
+}
+
+[node name="Potion" type="Node3D"]
+script = ExtResource("1_jw4gx")
+
+[node name="Hitbox" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.000457287, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Hitbox"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.192464, 0)
+shape = SubResource("CapsuleShape3D_l7it2")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.196454, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_lo7mf")
+frame_progress = 0.332761
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_bmic7")
+}
+autoplay = "bounce"
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

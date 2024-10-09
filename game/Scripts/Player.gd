@@ -98,6 +98,10 @@ func _hit(damage) -> void:
 		if HEALTH <= 0:
 			get_tree().change_scene_to_file("res://Scenes/Main_menu.tscn")
 
+func _heal(heal) -> void:
+	HEALTH += heal
+	if HEALTH > MAX_HEALTH:
+		HEALTH = MAX_HEALTH
 
 func _on_timer_timeout() -> void:
 	hitable = true

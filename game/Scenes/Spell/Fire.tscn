@@ -125,7 +125,7 @@ animations = [{
 [node name="Fire" type="Node3D"]
 script = ExtResource("1_k6cl2")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="Direction" type="RayCast3D" parent="."]
 transform = Transform3D(1, -8.7423e-08, 0, 1.74846e-07, 0.5, 0, 0, 0, 1, 0, 0.217509, 0)
 hit_back_faces = false
 collide_with_areas = true

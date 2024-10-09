@@ -14,9 +14,6 @@ func _ready() -> void:
 	hand_fire.position.y = get_viewport().size.y - hand_fire.sprite_frames.get_frame_texture("default", 0).get_height() * 2
 	monster_bar.position.x = get_viewport().size.x / 2 - monster_bar.get_under_texture().get_width() / 2
 
-	
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

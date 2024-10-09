@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://c43fth4s2rffc"
-path="res://.godot/imported/civitype.ttf-9189e295fff7fe4ce80fc6a73b45c95e.fontdata"
+uid="uid://dl53166e6h3rc"
+path="res://.godot/imported/civitype.ttf-fe70a0666d86cfce0efd98d9773fafc3.fontdata"
 
 [deps]
 
-source_file="res://Assets/Fonts/civitype.ttf"
-dest_files=["res://.godot/imported/civitype.ttf-9189e295fff7fe4ce80fc6a73b45c95e.fontdata"]
+source_file="res://Scenes/Spell/civitype.ttf"
+dest_files=["res://.godot/imported/civitype.ttf-fe70a0666d86cfce0efd98d9773fafc3.fontdata"]
 
 [params]
 

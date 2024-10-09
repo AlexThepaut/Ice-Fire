@@ -1,30 +1,30 @@
 [gd_scene load_steps=29 format=3 uid="uid://b8qrl2j65lmv4"]
 
-[ext_resource type="Script" path="res://Scripts/MonsterV2.gd" id="1_yekdm"]
-[ext_resource type="Texture2D" uid="uid://b6opttbcxn0tq" path="res://Assets/Spritesheets/Monster/Death/sprite_00.png" id="2_1hcyl"]
-[ext_resource type="Texture2D" uid="uid://b4dwedagtd527" path="res://Assets/Spritesheets/Monster/Idle/sprite_06.png" id="2_yddaj"]
-[ext_resource type="Texture2D" uid="uid://fhed8mb2qlx1" path="res://Assets/Spritesheets/Monster/Death/sprite_01.png" id="3_1iy8r"]
-[ext_resource type="Texture2D" uid="uid://btihwahtgfmgo" path="res://Assets/Spritesheets/Monster/Idle/sprite_07.png" id="3_uuoy0"]
-[ext_resource type="Texture2D" uid="uid://diiqb320bkjdh" path="res://Assets/Spritesheets/Monster/Death/sprite_02.png" id="4_ixbtl"]
-[ext_resource type="Texture2D" uid="uid://cr7whoiarchsy" path="res://Assets/Spritesheets/Monster/Idle/sprite_08.png" id="4_r5ij2"]
-[ext_resource type="Texture2D" uid="uid://c2xrlf3bqmjf2" path="res://Assets/Spritesheets/Monster/Death/sprite_03.png" id="5_02fyn"]
-[ext_resource type="Texture2D" uid="uid://eupnr0tlo7ji" path="res://Assets/Spritesheets/Monster/Idle/sprite_09.png" id="5_4uiax"]
-[ext_resource type="Texture2D" uid="uid://cuc4a3hba1tge" path="res://Assets/Spritesheets/Monster/Death/sprite_04.png" id="6_f673f"]
-[ext_resource type="Texture2D" uid="uid://jr5k6j5oipkw" path="res://Assets/Spritesheets/Monster/Death/sprite_05.png" id="7_pmhvt"]
-[ext_resource type="Texture2D" uid="uid://ci0nlw7ujbjgp" path="res://Assets/Spritesheets/Monster/Death/sprite_06.png" id="8_qd01c"]
-[ext_resource type="Texture2D" uid="uid://dwpoh48dnw8fo" path="res://Assets/Spritesheets/Monster/Death/sprite_07.png" id="9_fdxav"]
-[ext_resource type="Texture2D" uid="uid://cs3jav4obgkgu" path="res://Assets/Spritesheets/Monster/Death/sprite_08.png" id="10_sx1vq"]
-[ext_resource type="Texture2D" uid="uid://ql2td1olv7gl" path="res://Assets/Spritesheets/Monster/Death/sprite_09.png" id="11_ce456"]
-[ext_resource type="Texture2D" uid="uid://8kx17l3bljp5" path="res://Assets/Spritesheets/Monster/Run/sprite_4.png" id="12_thmbo"]
-[ext_resource type="Texture2D" uid="uid://dct1671oh1aim" path="res://Assets/Spritesheets/Monster/Run/sprite_5.png" id="13_f5sjm"]
-[ext_resource type="Texture2D" uid="uid://pnvw1w1ir7qv" path="res://Assets/Spritesheets/Monster/Shoot/sprite_0.png" id="18_drhv3"]
-[ext_resource type="Texture2D" uid="uid://da1xbvnkd7bv2" path="res://Assets/Spritesheets/Monster/Shoot/sprite_1.png" id="19_l5114"]
-[ext_resource type="Texture2D" uid="uid://g1orudnw28bv" path="res://Assets/Spritesheets/Monster/Shoot/sprite_2.png" id="20_huvr2"]
-[ext_resource type="Texture2D" uid="uid://davhqqr7bpmdp" path="res://Assets/Spritesheets/Monster/Shoot/sprite_3.png" id="21_ehlee"]
-[ext_resource type="Texture2D" uid="uid://dskmgubux37uo" path="res://Assets/Spritesheets/Monster/Shoot/sprite_4.png" id="22_llqwl"]
-[ext_resource type="Texture2D" uid="uid://cryi8ybdluyc4" path="res://Assets/Spritesheets/Monster/Shoot/sprite_5.png" id="23_s1pfk"]
-[ext_resource type="Texture2D" uid="uid://dvwdxmop113sw" path="res://Assets/Spritesheets/Monster/Shoot/sprite_6.png" id="24_qkxr1"]
-[ext_resource type="Texture2D" uid="uid://4tip8rvpumtx" path="res://Assets/Spritesheets/Monster/Shoot/sprite_7.png" id="25_tsdry"]
+[ext_resource type="Script" path="res://Scripts/Monster.gd" id="1_yekdm"]
+[ext_resource type="Texture2D" uid="uid://b6opttbcxn0tq" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_00.png" id="2_1hcyl"]
+[ext_resource type="Texture2D" uid="uid://b4dwedagtd527" path="res://Assets/Spritesheets/Monster/Ghost/Idle/sprite_06.png" id="2_yddaj"]
+[ext_resource type="Texture2D" uid="uid://fhed8mb2qlx1" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_01.png" id="3_1iy8r"]
+[ext_resource type="Texture2D" uid="uid://btihwahtgfmgo" path="res://Assets/Spritesheets/Monster/Ghost/Idle/sprite_07.png" id="3_uuoy0"]
+[ext_resource type="Texture2D" uid="uid://diiqb320bkjdh" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_02.png" id="4_ixbtl"]
+[ext_resource type="Texture2D" uid="uid://cr7whoiarchsy" path="res://Assets/Spritesheets/Monster/Ghost/Idle/sprite_08.png" id="4_r5ij2"]
+[ext_resource type="Texture2D" uid="uid://c2xrlf3bqmjf2" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_03.png" id="5_02fyn"]
+[ext_resource type="Texture2D" uid="uid://eupnr0tlo7ji" path="res://Assets/Spritesheets/Monster/Ghost/Idle/sprite_09.png" id="5_4uiax"]
+[ext_resource type="Texture2D" uid="uid://cuc4a3hba1tge" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_04.png" id="6_f673f"]
+[ext_resource type="Texture2D" uid="uid://jr5k6j5oipkw" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_05.png" id="7_pmhvt"]
+[ext_resource type="Texture2D" uid="uid://ci0nlw7ujbjgp" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_06.png" id="8_qd01c"]
+[ext_resource type="Texture2D" uid="uid://dwpoh48dnw8fo" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_07.png" id="9_fdxav"]
+[ext_resource type="Texture2D" uid="uid://cs3jav4obgkgu" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_08.png" id="10_sx1vq"]
+[ext_resource type="Texture2D" uid="uid://ql2td1olv7gl" path="res://Assets/Spritesheets/Monster/Ghost/Death/sprite_09.png" id="11_ce456"]
+[ext_resource type="Texture2D" uid="uid://8kx17l3bljp5" path="res://Assets/Spritesheets/Monster/Ghost/Run/sprite_4.png" id="12_thmbo"]
+[ext_resource type="Texture2D" uid="uid://dct1671oh1aim" path="res://Assets/Spritesheets/Monster/Ghost/Run/sprite_5.png" id="13_f5sjm"]
+[ext_resource type="Texture2D" uid="uid://pnvw1w1ir7qv" path="res://Assets/Spritesheets/Monster/Ghost/Shoot/sprite_0.png" id="18_drhv3"]
+[ext_resource type="Texture2D" uid="uid://da1xbvnkd7bv2" path="res://Assets/Spritesheets/Monster/Ghost/Shoot/sprite_1.png" id="19_l5114"]
+[ext_resource type="Texture2D" uid="uid://g1orudnw28bv" path="res://Assets/Spritesheets/Monster/Ghost/Shoot/sprite_2.png" id="20_huvr2"]
+[ext_resource type="Texture2D" uid="uid://davhqqr7bpmdp" path="res://Assets/Spritesheets/Monster/Ghost/Shoot/sprite_3.png" id="21_ehlee"]
+[ext_resource type="Texture2D" uid="uid://dskmgubux37uo" path="res://Assets/Spritesheets/Monster/Ghost/Shoot/sprite_4.png" id="22_llqwl"]
+[ext_resource type="Texture2D" uid="uid://cryi8ybdluyc4" path="res://Assets/Spritesheets/Monster/Ghost/Shoot/sprite_5.png" id="23_s1pfk"]
+[ext_resource type="Texture2D" uid="uid://dvwdxmop113sw" path="res://Assets/Spritesheets/Monster/Ghost/Shoot/sprite_6.png" id="24_qkxr1"]
+[ext_resource type="Texture2D" uid="uid://4tip8rvpumtx" path="res://Assets/Spritesheets/Monster/Ghost/Shoot/sprite_7.png" id="25_tsdry"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k5cbf"]
 radius = 0.324605
@@ -130,24 +130,24 @@ animations = [{
 [node name="Monster" type="CharacterBody3D" groups=["Monsters"]]
 script = ExtResource("1_yekdm")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Body_Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0489197, 0, 0)
 shape = SubResource("CapsuleShape3D_k5cbf")
 
-[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+[node name="Sprites" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 sprite_frames = SubResource("SpriteFrames_8pbee")
 animation = &"Shoot"
 frame_progress = 0.449101
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="Navigation_Agent" type="NavigationAgent3D" parent="."]
 
-[node name="SightRange" type="Area3D" parent="."]
+[node name="Sight_Range" type="Area3D" parent="."]
 collision_layer = 16
 collision_mask = 16
 input_ray_pickable = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="SightRange"]
+[node name="Range" type="CollisionShape3D" parent="Sight_Range"]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 shape = SubResource("SphereShape3D_m2aeh")
 
@@ -155,9 +155,9 @@ shape = SubResource("SphereShape3D_m2aeh")
 wait_time = 4.0
 autostart = true
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
-transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, -0.2, 0, -0.1)
+[node name="Spell_Ray" type="RayCast3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, -3.82137e-15, 0, -4.37114e-08, 1, -8.74228e-08, 1, 4.37114e-08, 0, 0, -0.1)
 
-[connection signal="body_entered" from="SightRange" to="." method="_on_sight_range_body_entered"]
-[connection signal="body_exited" from="SightRange" to="." method="_on_sight_range_body_exited"]
+[connection signal="body_entered" from="Sight_Range" to="." method="_on_sight_range_body_entered"]
+[connection signal="body_exited" from="Sight_Range" to="." method="_on_sight_range_body_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

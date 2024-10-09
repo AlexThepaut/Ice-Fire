@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=3 uid="uid://ddsrinvtabssb"]
 
 [ext_resource type="Texture2D" uid="uid://1su8uwjmejql" path="res://Assets/Spritesheets/Fire/Fire_00.png" id="1_f4j0t"]
-[ext_resource type="Script" path="res://Scripts/gui.gd" id="1_y3e4q"]
+[ext_resource type="Script" path="res://Scripts/GUI.gd" id="1_y3e4q"]
 [ext_resource type="Texture2D" uid="uid://m1e2p5fyrgob" path="res://Assets/Spritesheets/Fire/Fire_01.png" id="2_v3x8c"]
 [ext_resource type="Texture2D" uid="uid://bc17nac0y5fv0" path="res://Assets/Spritesheets/Fire/Fire_02.png" id="3_c5dbo"]
 [ext_resource type="Texture2D" uid="uid://bvnn0p1yluk3m" path="res://Assets/Spritesheets/Fire/Fire_03.png" id="4_852df"]

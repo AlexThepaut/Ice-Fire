@@ -4,7 +4,7 @@ var speed = 20.0
 var damage = 4.0
 
 @onready var sprite = $Flamme
-@onready var ray = $RayCast3D
+@onready var ray = $Direction
 @onready var particules = $Sparkle
 
 # Called when the node enters the scene tree for the first time.

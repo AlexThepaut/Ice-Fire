@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dr70km7akbetn"]
 
-[ext_resource type="Script" path="res://Scripts/monster_spell.gd" id="1_rsuqt"]
+[ext_resource type="Script" path="res://Scripts/Monster_Spell.gd" id="1_rsuqt"]
 [ext_resource type="Texture2D" uid="uid://8ar7g58wtgc2" path="res://Assets/Spritesheets/All_Fire_Bullet_Pixel_16x16_03.png" id="2_74lwp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o38qj"]
@@ -42,7 +42,7 @@ animations = [{
 [node name="Monster_Spell" type="Node3D"]
 script = ExtResource("1_rsuqt")
 
-[node name="RayCast3D" type="RayCast3D" parent="."]
+[node name="Direction" type="RayCast3D" parent="."]
 transform = Transform3D(1, -8.7423e-08, 0, 1.74846e-07, 0.5, 0, 0, 0, 1, 0, 0.217509, 0)
 collide_with_areas = true
 debug_shape_thickness = 5

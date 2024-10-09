@@ -3,7 +3,7 @@ var speed = 12.0
 var damage = 2.0
 
 @onready var sprite = $Spell
-@onready var ray = $RayCast3D
+@onready var ray = $Direction
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
