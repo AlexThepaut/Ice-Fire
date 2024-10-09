@@ -127,7 +127,7 @@ animations = [{
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_m2aeh"]
 
-[node name="Monster" type="CharacterBody3D" groups=["Monsters"]]
+[node name="Monster2" type="CharacterBody3D" groups=["Monsters"]]
 script = ExtResource("1_yekdm")
 
 [node name="Body_Collision" type="CollisionShape3D" parent="."]
