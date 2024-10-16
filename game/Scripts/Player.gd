@@ -1,4 +1,5 @@
 extends CharacterBody3D
+class_name Player
 
 @onready var head = $Head
 @onready var camera = $Head/Camera
@@ -76,8 +77,8 @@ func _process(delta: float) -> void:
 	if center_ray.is_colliding() and center_ray.get_collider().is_in_group("Monsters"):
 		gui.get_node("Monster_Bar").visible = true
 		gui.get_node("Monster_Bar").get_node("Monster_Label").visible = true
-		gui.get_node("Monster_Bar").max_value = center_ray.get_collider().MAX_HEALTH
-		gui.get_node("Monster_Bar").value = center_ray.get_collider().HEALTH
+		gui.get_node("Monster_Bar").max_value = center_ray.get_collider().health_component.MAX_HEALTH
+		gui.get_node("Monster_Bar").value = center_ray.get_collider().health_component.health
 		gui.get_node("Monster_Bar").get_node("Monster_Label").text = center_ray.get_collider().name
 	else: 
 		gui.get_node("Monster_Bar").visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://byuqxsqa717dm"]
+[gd_scene load_steps=30 format=3 uid="uid://byuqxsqa717dm"]
 
 [ext_resource type="Script" path="res://Scripts/Fire.gd" id="1_k6cl2"]
 [ext_resource type="Texture2D" uid="uid://1su8uwjmejql" path="res://Assets/Spritesheets/Fire/Fire_00.png" id="2_ps1qt"]
@@ -27,7 +27,6 @@
 [ext_resource type="Texture2D" uid="uid://b83mpeom22qml" path="res://Assets/Spritesheets/Spark/spark_4.png" id="25_tmtvm"]
 [ext_resource type="Texture2D" uid="uid://clenlryij432l" path="res://Assets/Spritesheets/Spark/spark_5.png" id="26_kapfr"]
 [ext_resource type="Texture2D" uid="uid://emksrtsqhnmf" path="res://Assets/Spritesheets/Spark/spark_6.png" id="27_563g3"]
-[ext_resource type="Script" path="res://Scripts/Components/Hitbox_Component.gd" id="28_51enl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_83qcf"]
 animations = [{
@@ -123,16 +122,8 @@ animations = [{
 "speed": 12.0
 }]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_qbif7"]
-radius = 0.164543
-
 [node name="Fire" type="Node3D"]
 script = ExtResource("1_k6cl2")
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 4.0
-one_shot = true
-autostart = true
 
 [node name="Flamme" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, -4.37114e-08, -1.91068e-15, -1.91069e-15, -8.74228e-08, 1, -4.37114e-08, -1, -8.74228e-08, -0.0151114, 0.0267433, -0.4)
@@ -147,12 +138,6 @@ billboard = 1
 sprite_frames = SubResource("SpriteFrames_y4g8a")
 frame_progress = 0.595888
 
-[node name="HitboxComponent" type="Area3D" parent="."]
-script = ExtResource("28_51enl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="HitboxComponent"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.0520435)
-shape = SubResource("SphereShape3D_qbif7")
-
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="body_entered" from="HitboxComponent" to="." method="_on_hitbox_component_body_entered"]
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0)
+collide_with_areas = true

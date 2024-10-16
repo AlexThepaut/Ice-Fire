@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://isnakmo2tlcx"]
+
+[ext_resource type="Script" path="res://Scripts/State_Machine/Monster_Follow.gd" id="1_8bhph"]
+
+[node name="Monster_Follow" type="Node"]
+script = ExtResource("1_8bhph")

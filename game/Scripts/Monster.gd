@@ -21,7 +21,7 @@ enum STATE {
 var previous_state = STATE.IDLE
 var actual_state = STATE.IDLE
 var is_shooting = false
-var player = null
+var player: Player = null
 var player_distance = 9999.0
 var spell_path = load("res://Scenes/Spell/Monster_Spell.tscn")
 var instance

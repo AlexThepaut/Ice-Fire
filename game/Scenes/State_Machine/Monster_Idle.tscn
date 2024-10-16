@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://w03j2pb76qen"]
+
+[ext_resource type="Script" path="res://Scripts/State_Machine/Monster_Idle.gd" id="1_5p4r5"]
+
+[node name="Monster_Idle" type="Node"]
+script = ExtResource("1_5p4r5")

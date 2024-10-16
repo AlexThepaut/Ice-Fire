@@ -24,6 +24,7 @@ window/size/viewport_height=1080
 
 Monsters=""
 Player=""
+World=""
 
 [input]
 

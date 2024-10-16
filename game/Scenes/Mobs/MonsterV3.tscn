@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://fmvid6c0p6dw"]
+[gd_scene load_steps=81 format=3 uid="uid://fmvid6c0p6dw"]
 
 [ext_resource type="Script" path="res://Scripts/Monster_v_3.gd" id="1_2ndg8"]
 [ext_resource type="PackedScene" uid="uid://ca708gfj7avgh" path="res://Scenes/Components/Hitbox_Component.tscn" id="2_efk8y"]
@@ -37,16 +37,18 @@
 [ext_resource type="Texture2D" uid="uid://b15w5muyqh4qi" path="res://Assets/Spritesheets/Monster/Ghost/Idle/sprite_03.png" id="35_3jgmc"]
 [ext_resource type="Texture2D" uid="uid://b4ca4lalrl282" path="res://Assets/Spritesheets/Monster/Ghost/Idle/sprite_04.png" id="36_rjqkf"]
 [ext_resource type="Texture2D" uid="uid://bgfnewb1oswe4" path="res://Assets/Spritesheets/Monster/Ghost/Idle/sprite_05.png" id="37_1n1e5"]
-[ext_resource type="PackedScene" uid="uid://ba1t5poi2ifya" path="res://Scenes/Components/State_Machine/State_Machine.tscn" id="38_gpc2w"]
-[ext_resource type="Script" path="res://Scripts/State_Machine/Monster_Idle.gd" id="39_gae35"]
+[ext_resource type="PackedScene" uid="uid://ba1t5poi2ifya" path="res://Scenes/State_Machine/State_Machine.tscn" id="38_gpc2w"]
+[ext_resource type="PackedScene" uid="uid://w03j2pb76qen" path="res://Scenes/State_Machine/Monster_Idle.tscn" id="39_ryo8t"]
+[ext_resource type="PackedScene" uid="uid://isnakmo2tlcx" path="res://Scenes/State_Machine/Monster_Follow.tscn" id="40_tj8sr"]
+[ext_resource type="PackedScene" uid="uid://bp6mnyx3c0mnc" path="res://Scenes/State_Machine/Monster_Shoot.tscn" id="42_ss05q"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5vb2e"]
-radius = 0.325147
+radius = 0.337924
 height = 1.16214
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6xigu"]
 radius = 0.324605
-height = 1.15692
+height = 1.07603
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7syyh"]
 animations = [{
@@ -448,47 +450,47 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hjgpl"]
 advance_mode = 2
-advance_condition = &"Death"
+advance_expression = "health_component.health <= 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_upj4j"]
 advance_mode = 2
-advance_condition = &"Death"
+advance_expression = "health_component.health <= 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_f0sn6"]
 advance_mode = 2
-advance_condition = &"Death"
+advance_expression = "health_component.health <= 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_trcoo"]
 advance_mode = 2
-advance_condition = &"Death"
+advance_expression = "health_component.health <= 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ly3na"]
 advance_mode = 2
-advance_condition = &"Death"
+advance_expression = "health_component.health <= 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_s8ndp"]
 advance_mode = 2
-advance_condition = &"Shoot"
+advance_expression = "is_shooting"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_go2dd"]
 advance_mode = 2
-advance_condition = &"Shoot"
+advance_expression = "is_shooting"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_e4qei"]
 advance_mode = 2
-advance_condition = &"Shoot"
+advance_expression = "is_shooting"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oiagk"]
 advance_mode = 2
-advance_condition = &"Shoot"
+advance_expression = "is_shooting"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xwiaq"]
 advance_mode = 2
-advance_condition = &"Shoot"
+advance_expression = "is_shooting"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_r0pfn"]
 advance_mode = 2
-advance_condition = &"Death"
+advance_expression = "health_component.health <= 0"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tqq6u"]
 switch_mode = 2
@@ -497,7 +499,8 @@ advance_expression = "velocity"
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_mv1ss"]
 states/Death/node = SubResource("AnimationNodeAnimation_lm0h2")
-states/Death/position = Vector2(748, 115)
+states/Death/position = Vector2(747, 114)
+states/End/position = Vector2(901, 100)
 states/Idle/node = SubResource("AnimationNodeAnimation_me0tn")
 states/Idle/position = Vector2(310, 58)
 states/Shoot/node = SubResource("AnimationNodeAnimation_q5ubu")
@@ -512,18 +515,22 @@ states/Start_Idle/position = Vector2(137, 165)
 states/Walk/node = SubResource("AnimationNodeAnimation_1qllu")
 states/Walk/position = Vector2(543, 342)
 transitions = ["Idle", "Start_Fly", SubResource("AnimationNodeStateMachineTransition_72cch"), "Start_Fly", "Walk", SubResource("AnimationNodeStateMachineTransition_u5i3r"), "Start", "Start_Idle", SubResource("AnimationNodeStateMachineTransition_1qels"), "Start_Idle", "Idle", SubResource("AnimationNodeStateMachineTransition_o3edr"), "Walk", "Start_Fly 2", SubResource("AnimationNodeStateMachineTransition_rw5wr"), "Start_Fly 2", "Start_Idle", SubResource("AnimationNodeStateMachineTransition_xcu4b"), "Shoot", "Start_Idle", SubResource("AnimationNodeStateMachineTransition_ciekf"), "Death", "End", SubResource("AnimationNodeStateMachineTransition_8tfs7"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_hjgpl"), "Start_Fly", "Death", SubResource("AnimationNodeStateMachineTransition_upj4j"), "Start_Idle", "Death", SubResource("AnimationNodeStateMachineTransition_f0sn6"), "Start_Fly 2", "Death", SubResource("AnimationNodeStateMachineTransition_trcoo"), "Walk", "Death", SubResource("AnimationNodeStateMachineTransition_ly3na"), "Walk", "Shoot", SubResource("AnimationNodeStateMachineTransition_s8ndp"), "Start_Fly 2", "Shoot", SubResource("AnimationNodeStateMachineTransition_go2dd"), "Start_Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_e4qei"), "Idle", "Shoot", SubResource("AnimationNodeStateMachineTransition_oiagk"), "Start_Fly", "Shoot", SubResource("AnimationNodeStateMachineTransition_xwiaq"), "Shoot", "Death", SubResource("AnimationNodeStateMachineTransition_r0pfn"), "Shoot", "Start_Fly", SubResource("AnimationNodeStateMachineTransition_tqq6u")]
-graph_offset = Vector2(-93, -50)
+graph_offset = Vector2(-212, -35.745)
 
-[node name="Monster" type="CharacterBody3D"]
+[node name="Monster" type="CharacterBody3D" node_paths=PackedStringArray("health_component", "animation_tree") groups=["Monsters"]]
 script = ExtResource("1_2ndg8")
+health_component = NodePath("Health_Component")
+animation_tree = NodePath("Animation_Tree")
 
 [node name="Hitbox_Component" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_efk8y")]
 health_component = NodePath("../Health_Component")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hitbox_Component"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0549215, 0.00383461, 0.011627)
 shape = SubResource("CapsuleShape3D_5vb2e")
 
 [node name="Health_Component" parent="." instance=ExtResource("3_mxxto")]
+MAX_HEALTH = 10.0
 
 [node name="Body_Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0489197, 0, 0)
@@ -543,12 +550,27 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_mv1ss")
 advance_expression_base_node = NodePath("..")
 anim_player = NodePath("../Animation_Player")
-parameters/conditions/Death = false
-parameters/conditions/Shoot = false
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1.31134e-07, -1, 0, 1, 1.31134e-07, -0.2, 0, -0.471952)
 
 [node name="State_Machine" parent="." node_paths=PackedStringArray("initial_state") instance=ExtResource("38_gpc2w")]
-initial_state = NodePath("MonsterIdle")
+initial_state = NodePath("Monster_Idle")
 
-[node name="MonsterIdle" type="Node" parent="State_Machine" node_paths=PackedStringArray("monster")]
-script = ExtResource("39_gae35")
+[node name="Monster_Follow" parent="State_Machine" node_paths=PackedStringArray("monster", "nav_agent") instance=ExtResource("40_tj8sr")]
 monster = NodePath("../..")
+nav_agent = NodePath("../../NavigationAgent3D")
+
+[node name="Monster_Idle" parent="State_Machine" node_paths=PackedStringArray("monster", "nav_agent") instance=ExtResource("39_ryo8t")]
+monster = NodePath("../..")
+nav_agent = NodePath("../../NavigationAgent3D")
+
+[node name="Monster_Shoot" parent="State_Machine" node_paths=PackedStringArray("monster", "nav_agent", "distance_spell_origin") instance=ExtResource("42_ss05q")]
+monster = NodePath("../..")
+nav_agent = NodePath("../../NavigationAgent3D")
+distance_spell_path = "res://Scenes/Spell/Fire.tscn"
+distance_spell_origin = NodePath("../../RayCast3D")
+distance_cooldown = 3.0
+distance_cooldown_range = 50.0
